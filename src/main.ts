@@ -1,4 +1,5 @@
 import { readFileSync } from "fs";
+import { parseInput } from "./parseInput";
 
 const input: string[] = readFileSync("inputs/test.txt", "utf8")
     .trim()
@@ -6,8 +7,7 @@ const input: string[] = readFileSync("inputs/test.txt", "utf8")
 
 export default function main() {
     console.log('start');
-    input.forEach(line => {
-        console.log(line);
-    });
+    const monkeys: Monkey[] = parseInput(input);
+
     console.log('end');
 }
